@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	"name": "Ganbo",
+	"version": "0.1",
+	"description": "Export cookies to a cookies.txt file",
+	"icons": {
+		"48": "img/icon.svg",
+		"96": "img/icon.svg"
+	},
+	"browser_action": {
+		"default_title": "Ganbo",
+		"default_popup": "popup.html",
+		"default_icon": {
+			"48": "img/icon.svg",
+			"96": "img/icon.svg"
+		}
+	},
+	"permissions": [
+		"<all_urls>",
+		"cookies",
+		"tabs"
+	]
+}
