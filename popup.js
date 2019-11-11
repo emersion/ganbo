@@ -49,3 +49,9 @@ formatActiveTabCookies()
 	document.getElementById('download-link').href = 'data:text/plain,' + encodeURIComponent(cookiesText)
 	document.getElementById('cookies').innerText = cookiesText
 })
+
+browser.cookies.getAll({})
+.then(formatCookieFile)
+.then((cookiesText) => {
+	document.getElementById('download-all').href = 'data:text/plain,' + encodeURIComponent(cookiesText)
+})
