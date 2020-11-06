@@ -39,11 +39,12 @@ function formatActiveTabCookies() {
 	return getActiveTab()
 	.then((tabs) => {
 		const tab = tabs.pop()
-		return Promise.all([Promise.resolve(tab.url), getFirstPartyDomain(tab.url)])
+		return Promise.all([Promise.resolve(tab.url), getFirstPartyDomain(tab.url), Promise.resolve(tab.cookieStoreId)])
 		.then((results) => {
 			return browser.cookies.getAll({
 				url: results[0],
-				firstPartyDomain: results[1]
+				firstPartyDomain: results[1],
+				storeId: results[2]
 			})
 			.then(formatCookieFile)
 		})
